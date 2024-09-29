@@ -1,0 +1,237 @@
+/* style.css */
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.overlay {
+    position: relative;
+    min-height: 100%;
+    padding: 0;
+    /* Background image will be set dynamically based on the active section */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    color: orange;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px #000;
+}
+
+nav button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgba(255, 165, 0, 0.8); /* Semi-transparent orange */
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background-color: orange;
+}
+
+main {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Sections Styling */
+section {
+    display: none;
+    color: white; /* Default text color for dark backgrounds */
+    min-height: calc(100vh - 80px); /* Adjust based on header height */
+}
+
+section.active {
+    display: block;
+}
+
+/* Background Images */
+#homeSection {
+    background: url('images/background1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#sarFinderSection {
+    background: url('images/background1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#aboutSARSection {
+    background: url('images/background2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+#healthRisksSection {
+    background: url('images/background3.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: black;
+}
+
+/* Form Styling */
+.form-container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.form-container label {
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 1.1em;
+}
+
+.form-container input, .form-container select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: orange;
+    border: none;
+    color: white;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: darkorange;
+}
+
+/* Result Styling */
+.result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #00FF00; /* Green color for results */
+}
+
+/* Caution Styling */
+.caution {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+}
+
+.caution-title {
+    color: red;
+    font-weight: bold;
+}
+
+.caution-text {
+    color: yellow;
+    margin-top: 10px;
+}
+
+/* About SAR Styling */
+.about-container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 50px auto;
+    color: white;
+}
+
+.about-container p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.about-container .small-image {
+    width: 150px;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.about-container .formula-explanation {
+    margin-top: 10px;
+}
+
+.about-container .center-image {
+    display: block;
+    margin: 30px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Health Risks Styling */
+.health-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 50px auto;
+    color: black;
+}
+
+.health-container p, .health-container ul {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.health-container ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.health-container hr {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .form-container, .about-container, .health-container {
+        padding: 20px;
+        margin: 30px auto;
+    }
+
+    .caution {
+        font-size: 0.9em;
+    }
+}

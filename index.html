@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAR Information Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay">
+        <header>
+            <h1>SAR Information Portal</h1>
+            <nav>
+                <button id="sarFinderBtn">SAR Finder</button>
+                <button id="aboutSARBtn">About SAR</button>
+                <button id="healthRisksBtn">Health Risks</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Home Section -->
+            <section id="homeSection" class="active">
+                <!-- Content is handled by the header buttons -->
+            </section>
+
+            <!-- SAR Finder Section -->
+            <section id="sarFinderSection">
+                <div class="form-container">
+                    <form id="sarForm">
+                        <label for="frequency">Enter Frequency (1-6 GHz):</label>
+                        <input type="number" id="frequency" name="frequency" min="1" max="6" step="0.1" required>
+
+                        <label for="tumorStatus">Tumor Status:</label>
+                        <select id="tumorStatus" name="tumorStatus" required>
+                            <option value="">--Select--</option>
+                            <option value="with">With Tumor</option>
+                            <option value="without">Without Tumor</option>
+                        </select>
+
+                        <button type="submit">Get SE and SAR Values</button>
+                    </form>
+
+                    <div id="result" class="result">
+                        <!-- SE and SAR values will be displayed here -->
+                    </div>
+                </div>
+                <div class="caution">
+                    <p><span class="caution-title">Caution:</span></p>
+                    <p class="caution-text">
+                        * SAR is provided only for sub six (1-6) GHz frequencies.<br>
+                        * The values obtained are numerically computed using Transmission Line Method, where 7 Layer head model was considered.<br>
+                        * For further understanding of SAR and Transmission Line Method, please go to About SAR section.
+                    </p>
+                </div>
+            </section>
+
+            <!-- About SAR Section -->
+            <section id="aboutSARSection">
+                <div class="about-container">
+                    <p>Specific Absorption Rate is the amount of energy absorbed per unit kg of brain tissue, when the brain is exposed to Radio Frequency produced by devices like mobile phone. It is measured in W/kg.</p>
+                    <img src="images/sar_formula.png" alt="SAR Formula" class="small-image">
+                    <p class="formula-explanation">
+                        Where:<br>
+                        σ is the electrical conductivity of the tissue (S/m),<br>
+                        E is the magnitude of the electric field strength in the tissue (V/m),<br>
+                        ρ is the mass density of the tissue (kg/m³).
+                    </p>
+                    <p>To measure SAR there are many approaches, where we used <strong>Transmission Line Method (TLM)</strong></p>
+                    <hr>
+                    <p>A seven layered head model was considered: Skin, Fat, Bone, Dura, Cerebra spinal fluid, White matter, Gray matter.</p>
+                    <img src="images/brain_layer.png" alt="Brain Layers" class="center-image">
+                    <p>The Transmission Line Method (TLM) is used to model how electromagnetic waves interact with multi-layered biological tissues. It calculates the electric field distribution within these tissues, providing key data to compute Specific Absorption Rate (SAR) at varying depths. This allows for an accurate assessment of how deeply electromagnetic waves penetrate and affect biological structures. In parallel, Shielding Theory quantifies how effective certain materials are at attenuating electromagnetic fields, with Shielding Effectiveness (SE) measured in decibels (dB). SE depends on factors such as material conductivity, thickness, permittivity, and frequency, helping to design structures that reduce electromagnetic exposure. By combining TLM, Shielding Theory, and SAR, a holistic approach is developed to understand electromagnetic wave propagation, assess health risks, and guide the design of safer environments, particularly in telecommunications, medical, and industrial fields.</p>
+                    <img src="images/flow_diagram.png" alt="Flow Diagram" class="center-image">
+                </div>
+            </section>
+
+            <!-- Health Risks Section -->
+            <section id="healthRisksSection">
+                <div class="health-container">
+                    <p><strong>The International Commission on Non-Ionizing Radiation Protection (ICNIRP)</strong> recommends that mobile phones have a Specific Absorption Rate (SAR) of no more than 2 watts per kilogram (W/kg). This limit is intended to prevent adverse health effects.</p>
+                    <hr>
+                    <p>If the SAR exceeds the recommended 2 W/kg limit, potential health risks include:</p>
+                    <ul>
+                        <li>Increased tissue heating, especially in the head and brain, leading to discomfort or headaches.</li>
+                        <li>Prolonged exposure could cause thermal damage to tissues, affecting cell structure and function.</li>
+                        <li>High SAR levels may cause skin irritation or burns from heat during direct contact.</li>
+                        <li>Long-term exposure has raised concerns about a potential increased risk of brain tumors, though research is ongoing.</li>
+                        <li>Sleep disturbances and cognitive effects like memory impairment and concentration difficulties have been associated with high SAR exposure.</li>
+                    </ul>
+                    <p>Hence Research in this field is very crucial for understanding health risks, establishing safety guidelines, developing safer technologies, addressing public concerns, assessing long-term impacts, innovating shielding techniques, and informing policy decisions.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
